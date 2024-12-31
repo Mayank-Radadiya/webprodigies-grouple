@@ -9,8 +9,7 @@
 # testing
 /coverage
 
-# Environment variables
-.env
+
 
 # next.js
 /.next/

@@ -19,11 +19,11 @@ const BackdropGradient: FC<BackdropGradientProps> = ({
             <div
                 className={cn(
                     "absolute rounded-[50%] mx-10",
-                    gradientStyle,
                     className,
+                    gradientStyle,
                 )}
-                // role="presentation"
-                // aria-hidden="true"
+                role="presentation"
+                aria-hidden="true"
             >
                 {children}
             </div>

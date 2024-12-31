@@ -1,9 +1,9 @@
-import { FC } from "react"
-import Menu from "./menu"
-import Link from "next/link"
+import GlassSheet from "@/components/global/glass-sheet/GlassSheet"
 import { Button } from "@/components/ui/button"
 import { LogOut, MenuIcon } from "lucide-react"
-import GlassSheet from "@/components/global/glass-sheet/GlassSheet"
+import Link from "next/link"
+import { FC } from "react"
+import Menu from "./menu"
 const index: FC = () => {
     return (
         <>

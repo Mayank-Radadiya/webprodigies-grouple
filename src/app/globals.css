@@ -229,3 +229,23 @@ html {
     height: 0;
     pointer-events: none;
 }
+
+.frosted-glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.gradient-glow {
+    background: linear-gradient(
+        to right,
+        rgba(255, 0, 150, 0.4),
+        rgba(0, 204, 255, 0.4)
+    );
+    backdrop-filter: blur(25px);
+}
+
+.soft-glow {
+    backdrop-filter: blur(15px);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+}
+

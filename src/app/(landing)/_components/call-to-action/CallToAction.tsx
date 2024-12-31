@@ -1,4 +1,7 @@
-import GradientText from "@/components/global/Gradient-Text/GradientText"
+import GradientText from "@/components/global/Gradient/GradientText"
+import { Button } from "@/components/ui/button"
+import { BadgePlus } from "lucide-react"
+import Link from "next/link"
 import { FC } from "react"
 
 const CallToAction: FC = () => {
@@ -18,7 +21,22 @@ const CallToAction: FC = () => {
                 <br className="md:hidden" />
                 relationships
             </p>
-            <div className="flex flex-col gap-5 w-full md:flex-row md:justify-center md:mt-3"></div>
+            <div className="flex flex-col gap-5 w-full md:flex-row md:justify-center md:mt-5">
+                <Button
+                    variant="outline"
+                    className="rounded-xl bg-transparent text-base"
+                >
+                    Watch Demo
+                </Button>
+                <Link href="/sign-in">
+                    <Button
+                        className="rounded-xl text-base flex items-center gap-2 w-full"
+                    >
+                        <BadgePlus /> Get Started
+                    </Button>
+                </Link>
+            </div>
+           
         </div>
     )
 }

@@ -31,7 +31,7 @@ const PricingSection = (props: Props) => {
                 <div className="flex flex-col gap-2">
                     <CardTitle>
                         <div>
-                            <GradientText element="H2" > 99$/m</GradientText>{" "}
+                            <GradientText element="H2"> 99$/m</GradientText>{" "}
                         </div>
                     </CardTitle>
                     <CardDescription className="text-[#B4B0AE]">
@@ -47,26 +47,26 @@ const PricingSection = (props: Props) => {
                     </Link>
                 </div>
                 <div className="flex flex-col gap-2 text-[#B4B0AE] mt-5">
-                    <p>Features</p>
+                    <p className="text-lg font-semibold text-white">Features</p>
                     <span className="flex gap-2 mt-3 items-center">
                         <Check />
-                        Feature number 1
+                        Expert-Led Video Lectures
                     </span>
                     <span className="flex gap-2 items-center">
                         <Check />
-                        Feature number 1
+                        Comprehensive Course Materials
                     </span>
                     <span className="flex gap-2 items-center">
                         <Check />
-                        Feature number 1
+                        Interactive Quizzes and Assignments
                     </span>
                     <span className="flex gap-2 items-center">
                         <Check />
-                        Feature number 1
+                        Progress Tracking and Certificates
                     </span>
                     <span className="flex gap-2 items-center">
                         <Check />
-                        Feature number 1
+                        24/7 Online Support
                     </span>
                 </div>
             </Card>

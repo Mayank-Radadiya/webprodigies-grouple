@@ -14,17 +14,17 @@ const AuthLayout = async ({ children }: Props) => {
 
     return (
         <>
-            <div className="container mx-auto flex justify-center items-center mt-48 text-themeTextWhite">
-                <div className="flex flex-col w-full items-center space-y-8 py-16 px-4 lg:px-0">
-                    <h2 className="text-5xl font-extrabold tracking-tight drop-shadow-md">
+            <div className="h-full w-full flex justify-center items-center text-themeTextWhite mt-20">
+                <div className="flex flex-col w-full max-w-lg items-center space-y-8 py-16 px-4">
+                    <h2 className="text-5xl font-extrabold tracking-tight drop-shadow-md text-center">
                         Grouple.
                     </h2>
                     <BackdropGradient
-                        className="w-full h-full opacity-60"
+                        className="absolute inset-0 opacity-60"
                         gradientStyle="gradient-glow"
-                        container="relative ml-[900px] flex w-full h-full flex-col items-center justify-center"
+                        container="relative flex w-full h-full items-center justify-center"
                     >
-                        <GlassCard className="xs:w-full md:w-7/12 lg:w-5/12 xl:w-4/12 p-8 mt-8 shadow-xl border border-gray-700 bg-opacity-70">
+                        <GlassCard className="w-full soft-glow p-8 shadow-xl border border-gray-700 bg-opacity-70 relative z-10">
                             {children}
                         </GlassCard>
                     </BackdropGradient>

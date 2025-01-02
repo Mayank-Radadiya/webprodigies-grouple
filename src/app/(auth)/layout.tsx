@@ -20,11 +20,10 @@ const AuthLayout = async ({ children }: Props) => {
                         Grouple.
                     </h2>
                     <BackdropGradient
-                        className="absolute inset-0 opacity-60"
-                        gradientStyle="gradient-glow"
+                        className="absolute h-1/2 inset-0 opacity-40"
                         container="relative flex w-full h-full items-center justify-center"
                     >
-                        <GlassCard className="w-full soft-glow p-8 shadow-xl border border-gray-700 bg-opacity-70 relative z-10">
+                        <GlassCard className="w-full  p-8 shadow-xl border border-gray-700 bg-opacity-70 relative z-10">
                             {children}
                         </GlassCard>
                     </BackdropGradient>

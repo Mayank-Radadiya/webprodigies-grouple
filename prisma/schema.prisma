@@ -177,4 +177,3 @@ enum GROUP_PRIVACY {
   PUBLIC
   PRIVATE
 }
-

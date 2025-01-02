@@ -1,31 +1,21 @@
 import { cn } from "@/lib/utils"
-import { FC } from "react"
 
-interface BackdropGradientProps {
+type Props = {
     children: React.ReactNode
     className?: string
     container?: string
-    gradientStyle?: "frosted-glass" | "gradient-glow" | "soft-glow"
 }
 
-const BackdropGradient: FC<BackdropGradientProps> = ({
-    children,
-    className = "",
-    container = "",
-    gradientStyle = "frosted-glass",
-}) => {
+const BackdropGradient = ({ children, className, container }: Props) => {
     return (
-        <div className={cn("relative flex w-full flex-col", container)}>
+        <div className={cn("relative w-full flex flex-col", container)}>
             <div
                 className={cn(
-                    "absolute rounded-[50%] mx-10",
-                    gradientStyle,
+                    "absolute rounded-[50%] radial--blur mx-10",
                     className,
                 )}
-                role="presentation"
-            >
-                {children}
-            </div>
+            />
+            {children}
         </div>
     )
 }

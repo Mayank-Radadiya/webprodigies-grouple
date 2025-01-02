@@ -1,11 +1,7 @@
-import { FC } from 'react'
+import { AuthenticateWithRedirectCallback } from "@clerk/nextjs"
 
-interface pageProps {
-  
+const CallBackPage = () => {
+    return <AuthenticateWithRedirectCallback />
 }
 
-const page: FC<pageProps> = ({}) => {
-  return <div>page</div>
-}
-
-export default page
+export default CallBackPage

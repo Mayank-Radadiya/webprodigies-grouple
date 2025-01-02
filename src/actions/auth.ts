@@ -29,8 +29,9 @@ export const onAuthenticatedUser = async () => {
             status: 404,
         }
     } catch (error) {
-        console.log(error)
-        return { status: 404 }
+        return {
+            status: 400,
+        }
     }
 }
 
@@ -41,17 +42,17 @@ export const onSignUpUser = async (data: {
     clerkId: string
 }) => {
     try {
-        const createUser = await client.user.create({
+        const createdUser = await client.user.create({
             data: {
                 ...data,
             },
         })
 
-        if (createUser) {
+        if (createdUser) {
             return {
                 status: 200,
-                message: "User created successfully",
-                id: createUser.id,
+                message: "User successfully created",
+                id: createdUser.id,
             }
         }
 
@@ -60,8 +61,10 @@ export const onSignUpUser = async (data: {
             message: "User could not be created! Try again",
         }
     } catch (error) {
-        console.log(error)
-        return { status: 400, message: "User could not be created! Try again" }
+        return {
+            status: 400,
+            message: "Oops! something went wrong. Try again",
+        }
     }
 }
 

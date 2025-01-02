@@ -1,4 +1,5 @@
 import SignInForm from "@/components/forms/Sign-In/SignInForm"
+import GoogleAuthButton from "@/components/global/GoogleAuthButton/GoogleAuthButton"
 import { Separator } from "@/components/ui/separator"
 import { FC } from "react"
 
@@ -24,7 +25,7 @@ const SignInPage: FC = () => {
                 </div>
                 <Separator orientation="horizontal" className="bg-themeTextGray" />
             </div>
-            {/* <GoogleAuthButton method="signin" /> */}
+            <GoogleAuthButton method="signin" />
         </>
     )
 }

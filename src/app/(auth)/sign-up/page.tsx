@@ -1,5 +1,5 @@
-
 import SignUpFrom from "@/components/forms/sign-up/SignUpFrom"
+import GoogleAuthButton from "@/components/global/GoogleAuthButton/GoogleAuthButton"
 import { Separator } from "@/components/ui/separator"
 import { FC } from "react"
 
@@ -28,7 +28,7 @@ const SignUpPage: FC = () => {
                     className="bg-themeTextGray"
                 />
             </div>
-            {/* <GoogleAuthButton method="signin" /> */}
+            <GoogleAuthButton method="signin" />
         </>
     )
 }

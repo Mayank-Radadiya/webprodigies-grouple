@@ -11,7 +11,7 @@ const SignInForm: FC = ({}) => {
     const { isPending, onAuthenticateUser, register, errors } = useAuthSignIn()
 
     return (
-        <form className="flex flex-col gap-3 mt-10">
+        <form className="flex flex-col gap-3 mt-10" onSubmit={onAuthenticateUser}>
             {GROUPLE_CONSTANTS.signInForm.map((field) => (
                 <FormGenerator
                     {...field}

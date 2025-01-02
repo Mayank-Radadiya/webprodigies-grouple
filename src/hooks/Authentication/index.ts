@@ -11,17 +11,9 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
 
-type ClerkSignInError = {
-    errors: {
-        code: string // A unique identifier for the error (e.g., "form_password_incorrect")
-        message: string // A human-readable error message
-        path?: string // (Optional) The path to the invalid field, if applicable
-    }[]
-}
 
 export const useAuthSignIn = () => {
     const { isLoaded, setActive, signIn } = useSignIn()
-    const router = useRouter()
     const {
         register,
         formState: { errors },
@@ -32,14 +24,14 @@ export const useAuthSignIn = () => {
         mode: "onBlur",
     })
 
+    const router = useRouter()
     const onClerkAuth = async (email: string, password: string) => {
         if (!isLoaded)
-            return toast("error", {
+            return toast("Error", {
                 description: "Oops! something went wrong",
             })
-
         try {
-            const authenticated = await signIn?.create({
+            const authenticated = await signIn.create({
                 identifier: email,
                 password: password,
             })
@@ -52,11 +44,8 @@ export const useAuthSignIn = () => {
                 })
                 router.push("/callback/sign-in")
             }
-        } catch (error) {
-            if (
-                (error as ClerkSignInError).errors[0].code ===
-                "form_password_incorrect"
-            )
+        } catch (error: any) {
+            if (error.errors[0].code === "form_password_incorrect")
                 toast("Error", {
                     description: "email/password is incorrect try again",
                 })
@@ -64,9 +53,13 @@ export const useAuthSignIn = () => {
     }
 
     const { mutate: InitiateLoginFlow, isPending } = useMutation({
-        mutationFn({ email, password }: { email: string; password: string }) {
-            return onClerkAuth(email, password)
-        },
+        mutationFn: ({
+            email,
+            password,
+        }: {
+            email: string
+            password: string
+        }) => onClerkAuth(email, password),
     })
 
     const onAuthenticateUser = handleSubmit(async (values) => {
@@ -196,6 +189,7 @@ export const useAuthSignUp = () => {
         getValues,
     }
 }
+
 export const useGoogleAuth = () => {
     const { signIn, isLoaded: LoadedSignIn } = useSignIn()
     const { signUp, isLoaded: LoadedSignUp } = useSignUp()
@@ -228,3 +222,4 @@ export const useGoogleAuth = () => {
 
     return { signUpWith, signInWith }
 }
+

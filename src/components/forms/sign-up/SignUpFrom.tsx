@@ -1,13 +1,22 @@
 "use client"
+
 import { FormGenerator } from "@/components/global/form-generator/FormGenerator"
 import { Loader } from "@/components/global/Loader/Loader"
-import OtpInput from "@/components/global/otp-input/OtpInput"
 import { Button } from "@/components/ui/button"
 import { GROUPLE_CONSTANTS } from "@/constants"
 import { useAuthSignUp } from "@/hooks/Authentication"
-import { FC } from "react"
+import dynamic from "next/dynamic"
 
-const SignUpFrom: FC = () => {
+
+const OtpInput = dynamic(
+    () =>
+        import("@/components/global/otp-input/OtpInput").then(
+            (component) => component.default,
+        ),
+    { ssr: false },
+)
+
+const SignUpForm = () => {
     const {
         register,
         errors,
@@ -19,6 +28,7 @@ const SignUpFrom: FC = () => {
         setCode,
         getValues,
     } = useAuthSignUp()
+
     return (
         <form
             onSubmit={onInitiateUserRegistration}
@@ -61,4 +71,4 @@ const SignUpFrom: FC = () => {
     )
 }
 
-export default SignUpFrom
+export default SignUpForm

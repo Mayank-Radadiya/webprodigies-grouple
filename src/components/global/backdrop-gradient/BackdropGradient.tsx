@@ -23,7 +23,6 @@ const BackdropGradient: FC<BackdropGradientProps> = ({
                     className,
                 )}
                 role="presentation"
-                aria-hidden="true"
             >
                 {children}
             </div>

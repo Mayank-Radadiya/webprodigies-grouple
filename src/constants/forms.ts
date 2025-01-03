@@ -47,7 +47,7 @@ export const SIGN_IN_FORM: AuthFormProps[] = [
         type: "email",
     },
     {
-        id: "4",
+        id: "2",
         inputType: "input",
         placeholder: "Password",
         name: "password",

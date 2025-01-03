@@ -194,6 +194,8 @@ export const useGoogleAuth = () => {
     const { signIn, isLoaded: LoadedSignIn } = useSignIn()
     const { signUp, isLoaded: LoadedSignUp } = useSignUp()
 
+    console.log(signIn, signUp);
+    
     const signInWith = (strategy: OAuthStrategy) => {
         if (!LoadedSignIn) return
         try {
@@ -219,7 +221,7 @@ export const useGoogleAuth = () => {
             console.error(error)
         }
     }
+    
 
     return { signUpWith, signInWith }
 }
-

@@ -15,7 +15,7 @@ const CompleteSigIn = async () => {
         return redirect(
             `/group/${authenticated.groupId}/channel/${authenticated.channelId}`,
         )
-
+    
     if (authenticated.status !== 200) {
         redirect("/sign-in")
     }

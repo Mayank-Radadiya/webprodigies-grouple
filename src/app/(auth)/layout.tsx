@@ -11,7 +11,7 @@ const AuthLayout = async ({ children }: Props) => {
     const user = await onAuthenticatedUser()
 
     if (user.status === 200) redirect("/callback/sign-in")
-
+        
     return (
         <>
             <div className="h-full w-full flex justify-center items-center text-themeTextWhite mt-20">

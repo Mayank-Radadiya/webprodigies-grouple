@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button"
 import { BadgePlus } from "lucide-react"
 import Link from "next/link"
 import { FC } from "react"
+import { toast } from "sonner"
 
 const CallToAction: FC = () => {
+
     return (
         <div className="flex flex-col items-start md:items-center gap-y-5 md:gap-y-0">
             <GradientText
@@ -29,14 +31,11 @@ const CallToAction: FC = () => {
                     Watch Demo
                 </Button>
                 <Link href="/sign-in">
-                    <Button
-                        className="rounded-xl text-base flex items-center gap-2 w-full"
-                    >
+                    <Button className="rounded-xl text-base flex items-center gap-2 w-full">
                         <BadgePlus /> Get Started
                     </Button>
                 </Link>
             </div>
-           
         </div>
     )
 }

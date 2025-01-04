@@ -1,7 +1,7 @@
 "use client"
 
-import { FreeMode } from "swiper/modules"
-import { Swiper, SwiperSlide, SwiperProps } from "swiper/react"
+import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperProps } from "swiper/react"
 import { Label } from "../../ui/label"
 
 type SliderProps = {
@@ -28,19 +28,21 @@ export const Slider = ({ children, overlay, label, ...rest }: SliderProps) => {
                 <Label className="pl-7 mb-3 text-themeTextGray">{label}</Label>
             )}
             <Swiper
-                modules={[FreeMode]}
-                freeMode={{
-                    enabled: true, // Enables free scrolling
+                modules={[Navigation, Pagination, Autoplay, FreeMode]}
+                autoplay={{
+                    delay: 1, // Minimal delay for continuous effect
+                    disableOnInteraction: false, // Keep autoplay active after interaction
                 }}
-                speed={5000} // Controls the speed of continuous scrolling
-                loop={true} // Enables infinite scrolling
-                slidesPerView="auto" // Dynamically adjusts to fit slides
-                spaceBetween={10} // Space between slides
-                allowTouchMove={false} // Disables user touch interaction for smoother infinite scroll
+                freeMode={{
+                    enabled: true, // Enable free mode for smooth continuous scrolling
+                    momentum: false, // Disable momentum to ensure constant speed
+                }}
+                speed={2000} // Adjust speed for smoothness
+                loop={true} // Enable infinite scrolling
+                slidesPerView="auto" // Show multiple slides at once
+                spaceBetween={10} // Adjust spacing between slides
                 {...rest}
             >
-                {children}
-                {/* Duplicate children for seamless looping */}
                 {children}
             </Swiper>
         </div>

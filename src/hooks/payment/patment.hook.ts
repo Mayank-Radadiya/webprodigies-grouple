@@ -1,6 +1,9 @@
 "use client"
 import { onCreateNewGroup } from "@/actions/groups"
-import { onGetStripeClientSecret, onTransferCommission } from "@/actions/payment"
+import {
+    onGetStripeClientSecret,
+    onTransferCommission,
+} from "@/actions/payment"
 import { CreateGroupSchema } from "@/components/schema/Group.Schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"

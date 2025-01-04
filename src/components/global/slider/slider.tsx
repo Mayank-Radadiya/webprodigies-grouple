@@ -16,7 +16,7 @@ export const Slider = ({ children, overlay, label, ...rest }: SliderProps) => {
             style={{
                 maskImage: `linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0))`,
             }}
-            className="w-full max-w-full overflow-x-hidden mt-5 relative"
+            className="w-full max-w-full overflow-x-hidden mt-5 relative hover:text-themeTextWhite"
         >
             {overlay && (
                 <>
@@ -25,7 +25,9 @@ export const Slider = ({ children, overlay, label, ...rest }: SliderProps) => {
                 </>
             )}
             {label && (
-                <Label className="pl-7 mb-3 text-themeTextGray">{label}</Label>
+                <Label className="pl-7 mb-3 text-themeTextGray focus:ring-2 focus:ring-blue-500">
+                    {label}
+                </Label>
             )}
             <Swiper
                 modules={[Navigation, Pagination, Autoplay, FreeMode]}

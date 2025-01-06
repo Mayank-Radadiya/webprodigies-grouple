@@ -14,7 +14,7 @@ const AuthLayout = async ({ children }: Props) => {
         
     return (
         <>
-            <div className="h-full w-full flex justify-center items-center text-themeTextWhite mt-20">
+            <div className="h-full w-full flex justify-center items-center text-themeTextWhite mt-16">
                 <div className="flex flex-col w-full max-w-lg items-center space-y-8 py-16 px-4">
                     <h2 className="text-5xl font-extrabold tracking-tight drop-shadow-md text-center">
                         Grouple.

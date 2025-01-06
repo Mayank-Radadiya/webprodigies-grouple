@@ -8,11 +8,11 @@ const SignUpPage: FC = async () => {
         <>
             <div className="flex items-center justify-center mb-2">
                 {" "}
-                <h5 className="font-bold text-2xl flex items-center text-themeTextWhite">
+                <h5 className="font-bold text-3xl flex items-center text-themeTextWhite">
                     Signup
                 </h5>
             </div>
-            <p className="text-themeTextGray leading-tight">
+            <p className="text-themeTextGray leading-tight text-lg px-5 pt-3">
                 Network with people from around the world, join groups, create
                 your own, watch courses and become the best version of yourself.
             </p>

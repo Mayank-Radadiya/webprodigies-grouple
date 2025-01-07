@@ -193,8 +193,6 @@ export const useAuthSignUp = () => {
 export const useGoogleAuth = () => {
     const { signIn, isLoaded: LoadedSignIn } = useSignIn()
     const { signUp, isLoaded: LoadedSignUp } = useSignUp()
-
-    console.log(signIn, signUp);
     
     const signInWith = (strategy: OAuthStrategy) => {
         if (!LoadedSignIn) return

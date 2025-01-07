@@ -45,7 +45,6 @@ export const useGroupChatOnline = (userid: string) => {
         channel
             .on("presence", { event: "sync" }, () => {
                 const state: any = channel.presenceState()
-                console.log(state)
                 for (const user in state) {
                     dispatch(
                         onOnline({

@@ -37,7 +37,6 @@ export const onAuthenticatedUser = async () => {
                     image: clerk.imageUrl || "", // Optional: Add image if required
                 },
             })
-            console.log("New user created:", user)
         }
 
         return {
@@ -69,8 +68,6 @@ export const onSignUpUser = async (data: {
             },
         })
 
-        console.log("Created User", createdUser)
-
         if (createdUser) {
             return {
                 status: 200,
@@ -94,7 +91,6 @@ export const onSignUpUser = async (data: {
 
 export const onSignInUser = async (clerkId: string) => {
     try {
-        console.log("Clerk ID:", clerkId)
         const loggedInUser = await client.user.findUnique({
             where: {
                 clerkId,

@@ -46,7 +46,7 @@ export const FormGenerator = ({
                         errors={errors}
                         name={name}
                         render={({ message }) => (
-                            <p className="text-red-400 mt-2">
+                            <p className="text-red-500 mt-2">
                                 {message === "Required" ? "" : message}
                             </p>
                         )}

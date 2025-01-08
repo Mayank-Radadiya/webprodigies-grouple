@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 import { Group, Plus } from "lucide-react"
 import Link from "next/link"
 import { v4 } from "uuid"
+import { DropDown } from "../drop-down/dropDown"
 import SideBarMenu from "./menu"
-import { DropDown } from "../drop-down/dropDoen"
 
 type Props = {
   groupid: string
@@ -61,6 +61,8 @@ const SideBar = ({ groupid, userid, mobile }: Props) => {
     useSideBar(groupid)
 
   useGroupChatOnline(userid)
+
+  
 
   return (
     <div

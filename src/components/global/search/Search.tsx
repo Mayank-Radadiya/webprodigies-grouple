@@ -27,23 +27,34 @@ const Search = ({
   return (
     <div
       className={cn(
-        "border-2 flex items-center gap-2 p-2 rounded-md",
-        className, // Allowing custom overrides
+        "flex items-center gap-2 w-[200px] h-10  rounded-md",
+        className,
         glass &&
-          "bg-clip-padding backdrop-blur-lg bg-opacity-20 backdrop-filter",
+          "bg-clip-padding backdrop-blur-lg bg-opacity-20 backdrop-filter overflow-hidden",
       )}
     >
-      <SearchIcon className={cn(iconStyle || "text-gray-500")} />
-      <Input
+      <p>
+        <SearchIcon className={cn(iconStyle || "text-gray-500")} />
+      </p>
+
+      {/* Input  change input */}
+      <input
         onChange={onSearchQuery}
         value={query}
         className={cn(
-          "bg-transparent border-none outline-none focus:ring-0 focus:outline-none focus-visible:ring-0",
+          "bg-transparent border-0 focus:outline-none focus-visible:ring-0",
           inputStyle,
         )}
         placeholder={placeholder}
         type="text"
       />
+      {/* <Input
+        onChange={onSearchQuery}
+        value={query}
+        className={cn("bg-transparent border-0", inputStyle)}
+        placeholder={placeholder}
+        type="text"
+      /> */}
     </div>
   )
 }

@@ -13,7 +13,7 @@ export const Notification = () => {
                 </span>
             }
         >
-            <div>yo</div>
+            <div></div>
         </GlassSheet>
     )
 }

@@ -10,7 +10,6 @@ import IconDropDown from "./icon-dropdown"
 import { IChannels } from "./sidebar"
 import { IconRenderer } from "../icon-render/IconRendor"
 
-
 type Props = {
   channels: IChannels[]
   optimisticChannel:

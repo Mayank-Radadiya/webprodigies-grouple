@@ -1,7 +1,7 @@
 import { ICON_LIST } from "@/constants/icons"
 import { cn } from "@/lib/utils"
 import React from "react"
-import { DropDown } from "../drop-down/dropDoen"
+import { DropDown } from "../drop-down/dropDown"
 import { IconRenderer } from "../icon-render/IconRendor"
 
 type Props = {
